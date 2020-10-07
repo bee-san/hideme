@@ -10,4 +10,6 @@ hides me in my cave
 root access
 tor service running on 9050
 
+```sudo apt install tor -y; sudo systemctl enable tor```
+
 ```pip3 install requests[socks]```
