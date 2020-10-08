@@ -1,7 +1,7 @@
 #Real quick note. YOU MUST RUN THIS AS ROOT
 import requests,socket,struct, time, os
 s = socket.socket(socket.AF_INET, socket.SOCK_RAW, socket.IPPROTO_TCP)
-while True:
+while 1:
     packet = s.recvfrom(65565);packet = packet[0]
     ip_header = packet[0:20];iph = struct.unpack('!BBHHHBBH4s4s' , ip_header)
     version_ihl = iph[0];ihl = version_ihl & 0xF;
