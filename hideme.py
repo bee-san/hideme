@@ -9,6 +9,5 @@ while True:
     tcph = struct.unpack('!HHLLBBHHH' , tcp_header);doff_reserved = tcph[4];tcph_length = doff_reserved >> 4
     h_size = iph_length + tcph_length * 4;data = packet[h_size:];looking_for = "HT"
     if(looking_for in str(data)):
-        time.sleep(4);os.system("sudo systemctl restart tor");time.sleep(4)
+        data="";time.sleep(4);os.system("sudo systemctl restart tor");time.sleep(4)
         print(requests.get("http://httpbin.org/ip",proxies={"http":"socks4://127.0.0.1:9050","https":"socks4://127.0.0.1:9050/"}).text)
-        data = ""
